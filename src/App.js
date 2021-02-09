@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React, {useState} from "react";
 function App() {
+  const [count, setCount]= useState(0);
+  const descCount = () =>{
+    setCount(count - 1)
+  };
+  const incCount = () =>{
+    setCount(count + 1)
+  };
+  const clearCount = () =>{
+    setCount(0)
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <main>
+    <div className="card">
+      <div className="counter-block">
+        <h1>{count}</h1>
+      </div>
+      <div className="buttons">
+        <button onClick={descCount}>-</button>
+        <button onClick={incCount}>+</button>
+        <button onClick={clearCount}>Clear</button>
+      </div>
     </div>
+    </main>
   );
 }
 
 export default App;
+
+function Fun(){
+return(
+  <h1>Hello World</h1>
+)
+}
+export default Fun;
+
